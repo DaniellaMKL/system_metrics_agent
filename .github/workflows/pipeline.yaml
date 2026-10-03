@@ -32,7 +32,7 @@ jobs:
       - name: Run tests
         run: |
           pip install pytest
-          pytest tests/
+          python -m pytest app/tests/
 
   build-and-push:
     needs: install-and-test
