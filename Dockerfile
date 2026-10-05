@@ -1,4 +1,4 @@
-FROM python:3.12-slim as base  
+FROM python:3.12-slim AS base  
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ EXPOSE 8000
 
 CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8000"]
 
-FROM base as agent
+FROM base AS agent
 
 CMD ["python", "-m", "app.agent"]
 
